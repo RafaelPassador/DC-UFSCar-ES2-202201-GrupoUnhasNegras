@@ -363,6 +363,38 @@ public class BibEntry {
             throw new IllegalArgumentException("The field name '" + name + "' is reserved");
         }
 
+        if (fieldName.equals("year")) {
+            try {
+                int ano = Integer.parseInt(value);
+                if (ano > 9999) {
+                    throw new IllegalArgumentException("The year must have four integer numbers");
+                }
+
+                if (ano < 0) {
+                    throw new IllegalArgumentException("The year must be a positive number");
+                }
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("The year must be an integer number");
+            }
+        }
+
+        if (fieldName.equals("bibtexkey")) {
+
+            String field = value;
+            if (field.length() < 2) {
+                throw new IllegalArgumentException("The key field must contain at least two characters");
+            }
+
+            if (field.length() > 2) {
+                throw new IllegalArgumentException("The key field must contain at most two characters");
+            }
+
+            if (!Character.isLetter(field.charAt(0))) {
+                throw new IllegalArgumentException("The key field must contain a letter on the first character");
+            }
+
+        }
+
         changed = true;
 
         String oldValue = fields.get(fieldName);

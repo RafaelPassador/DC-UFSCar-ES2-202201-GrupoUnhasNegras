@@ -378,23 +378,6 @@ public class BibEntry {
             }
         }
 
-        if (fieldName.equals("bibtexkey")) {
-
-            String field = value;
-            if (field.length() < 2) {
-                throw new IllegalArgumentException("The key field must contain at least two characters");
-            }
-
-            if (field.length() > 2) {
-                throw new IllegalArgumentException("The key field must contain at most two characters");
-            }
-
-            if (!Character.isLetter(field.charAt(0))) {
-                throw new IllegalArgumentException("The key field must contain a letter on the first character");
-            }
-
-        }
-
         changed = true;
 
         String oldValue = fields.get(fieldName);

@@ -8,6 +8,10 @@ Este trabalho tem como objetivo relizar testes e manutenção de sofware do sist
 * Inserção de itens bibliográficos
 * Importação de itens bibliográficos na base corrente
 
+### Melhorias
+* Validação dos campos "year" e "bibtexkey"
+* Possibilidade de importar arquivos no formato "csv"
+
 ### Equipe:
 * Júlia Aparecida Sousa de Oliveira    - RA: 769707 
 * Rafael Vinicius Polato Passador      - RA: 790036

@@ -53,6 +53,9 @@ import net.sf.jabref.logic.util.strings.StringUtil;
 import net.sf.jabref.model.database.BibDatabases;
 import net.sf.jabref.model.entry.BibEntry;
 
+//import csv
+import net.sf.jabref.importer.fileformat.CsvImporter;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -90,7 +93,7 @@ public class ImportFormatReader {
         formats.add(new SilverPlatterImporter());
 
         //Adicionando formato "CSV"
-        //formats.add(new CsvImporter());
+        formats.add(new CsvImporter());
 
         /**
          * Get custom import formats

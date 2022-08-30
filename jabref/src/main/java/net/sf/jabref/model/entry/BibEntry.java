@@ -364,13 +364,14 @@ public class BibEntry {
         }
 
         if (fieldName.equals("year")) {
+            SimpleDateFormat df = new SimpleDateFormat("yyyy");
             try {
                 int ano = Integer.parseInt(value);
                 if (ano < 0) {
                     throw new IllegalArgumentException("The year field must be a positive integer");
                 }
                 if (ano > 9999) {
-                    throw new IllegalArgumentException("The year field must have at most four integers");
+                    throw new IllegalArgumentException("The year field must have at most be in format (YYYY)");
                 }
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("The year field must be an integer number");

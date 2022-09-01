@@ -231,14 +231,14 @@ public class BibEntry {
      * <p>
      * The following aliases are considered (old bibtex <-> new biblatex) based
      * on the BibLatex documentation, chapter 2.2.5:
-     * address 		<-> location
-     * annote			<-> annotation
-     * archiveprefix 	<-> eprinttype
-     * journal 		<-> journaltitle
-     * key				<-> sortkey
-     * pdf 			<-> file
-     * primaryclass 	<-> eprintclass
-     * school 			<-> institution
+     * address      <-> location
+     * annote           <-> annotation
+     * archiveprefix    <-> eprinttype
+     * journal      <-> journaltitle
+     * key              <-> sortkey
+     * pdf          <-> file
+     * primaryclass     <-> eprintclass
+     * school           <-> institution
      * These work bidirectional.
      * <p>
      * Special attention is paid to dates: (see the BibLatex documentation,
@@ -375,12 +375,12 @@ public class BibEntry {
         }
 
         if (fieldName.equals("bibtexkey")) {
-	        if (value.length() < 2) {
-	            throw new IllegalArgumentException("The key field must contain at least two characters");
-	        }
+            if (value.length() < 2) {
+                throw new IllegalArgumentException("The key field must contain at least two characters");
+            }
             if (!Character.isLetter(value.charAt(0))) {
-	            throw new IllegalArgumentException("The key field must contain a letter on the first character");
-	        }
+                throw new IllegalArgumentException("The key field must contain a letter on the first character");
+            }
 
         }
 

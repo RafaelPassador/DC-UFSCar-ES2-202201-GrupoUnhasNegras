@@ -364,27 +364,23 @@ public class BibEntry {
         }
 
         if (fieldName.equals("year")) {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy");
             try {
                 int ano = Integer.parseInt(value);
                 if (ano < 0) {
-                    throw new IllegalArgumentException("The year field must be a positive integer");
-                }
-                if (ano > 9999) {
-                    throw new IllegalArgumentException("The year field must have at most be in format (YYYY)");
+                    throw new IllegalArgumentException("The year must be a positive number");
                 }
             } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("The year field must be an integer number");
+                throw new IllegalArgumentException("The year must be an integer number");
             }
         }
 
         if (fieldName.equals("bibtexkey")) {
-            if (value.length() < 2) {
-                throw new IllegalArgumentException("The key field must contain at least two characters");
-            }
+	        if (value.length() < 2) {
+	            throw new IllegalArgumentException("The key field must contain at least two characters");
+	        }
             if (!Character.isLetter(value.charAt(0))) {
-                throw new IllegalArgumentException("The key field must contain a letter on the first character");
-        }
+	            throw new IllegalArgumentException("The key field must contain a letter on the first character");
+	        }
 
         }
 

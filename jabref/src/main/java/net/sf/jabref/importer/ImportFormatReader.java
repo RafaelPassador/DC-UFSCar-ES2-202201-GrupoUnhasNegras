@@ -34,6 +34,7 @@ import net.sf.jabref.Globals;
 import net.sf.jabref.importer.fileformat.BibTeXMLImporter;
 import net.sf.jabref.importer.fileformat.BiblioscapeImporter;
 import net.sf.jabref.importer.fileformat.BibtexImporter;
+import net.sf.jabref.importer.fileformat.CSVImporter;
 import net.sf.jabref.importer.fileformat.CopacImporter;
 import net.sf.jabref.importer.fileformat.EndnoteImporter;
 import net.sf.jabref.importer.fileformat.FreeCiteImporter;
@@ -90,7 +91,7 @@ public class ImportFormatReader {
         formats.add(new SilverPlatterImporter());
 
         //Adicionando funcionalidade de importar Csv
-        //formats.add(new CSVImporter());
+        formats.add(new CSVImporter());
 
         /**
          * Get custom import formats

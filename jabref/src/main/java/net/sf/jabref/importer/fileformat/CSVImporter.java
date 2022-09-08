@@ -16,6 +16,11 @@ public class CSVImporter extends ImportFormat {
         return "CSV";
     }
 
+    @Override
+    public String getDescription() {
+        return "Importer for CSV format";
+    }
+
     //Check if the file is in the correct format for this importer.
     @Override
     public boolean isRecognizedFormat(InputStream stream) throws IOException {

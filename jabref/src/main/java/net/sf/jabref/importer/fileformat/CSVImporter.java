@@ -36,7 +36,7 @@ public class CSVImporter extends ImportFormat {
 
         String line = reader.readLine();
         while (line != null) {
-            if (!line.trim().isEmpty() && !line.contains("author")) {
+            if (!line.contains("author") && !line.trim().isEmpty()) {
 
                 BibEntry entry = new BibEntry();
 
@@ -45,7 +45,8 @@ public class CSVImporter extends ImportFormat {
                 entry.setType(BibtexEntryTypes.TECHREPORT);
                 entry.setField("author", fields[0]);
                 entry.setField("title", fields[1]);
-                entry.setField("year", fields[2]);
+                entry.setField("institution", fields[2]);
+                entry.setField("year", fields[3]);
 
                 items.add(entry);
             }

@@ -45,8 +45,7 @@ public class CSVImporter extends ImportFormat {
                 entry.setType(BibtexEntryTypes.TECHREPORT);
                 entry.setField("author", fields[0]);
                 entry.setField("title", fields[1]);
-                entry.setField("institution", fields[2]);
-                entry.setField("year", fields[3]);
+                entry.setField("year", fields[2]);
 
                 items.add(entry);
             }

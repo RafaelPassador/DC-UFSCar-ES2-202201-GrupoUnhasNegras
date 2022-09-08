@@ -42,27 +42,27 @@ public class CSVImporter extends ImportFormat {
 
                 String[] fields = line.split(";");
 
-                if (fields.length == 5) {
+                if (fields[0].equals("Article") || fields[0].equals("article")) {
 
                 entry.setType(BibtexEntryTypes.ARTICLE);
-                entry.setField("author", fields[0]);
-                entry.setField("title", fields[1]);
-                entry.setField("journal", fields[2]);
-                entry.setField("year", fields[3]);
-                entry.setField("bibtexkey", fields[4]);
+                entry.setField("author", fields[1]);
+                entry.setField("title", fields[2]);
+                entry.setField("journal", fields[3]);
+                entry.setField("year", fields[4]);
+                entry.setField("bibtexkey", fields[5]);
 
                 items.add(entry);
 
             }
 
-            if (fields.length == 6) {
+            if (fields[0].equals("Book") || fields[0].equals("book")) {
                 entry.setType(BibtexEntryTypes.BOOK);
-                entry.setField("title", fields[0]);
-                entry.setField("publisher", fields[1]);
-                entry.setField("year", fields[2]);
-                entry.setField("author", fields[3]);
-                entry.setField("editor", fields[4]);
-                entry.setField("bibtexkey", fields[5]);
+                entry.setField("title", fields[1]);
+                entry.setField("publisher", fields[2]);
+                entry.setField("year", fields[3]);
+                entry.setField("author", fields[4]);
+                entry.setField("editor", fields[5]);
+                entry.setField("bibtexkey", fields[6]);
 
                 items.add(entry);
 

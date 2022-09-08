@@ -42,15 +42,34 @@ public class CSVImporter extends ImportFormat {
 
                 String[] fields = line.split(";");
 
-                entry.setType(BibtexEntryTypes.TECHREPORT);
+                if (fields.length == 5) {
+
+                entry.setType(BibtexEntryTypes.ARTICLE);
                 entry.setField("author", fields[0]);
                 entry.setField("title", fields[1]);
-                entry.setField("year", fields[2]);
+                entry.setField("journal", fields[2]);
+                entry.setField("year", fields[3]);
+                entry.setField("bibtexkey", fields[4]);
 
                 items.add(entry);
+
             }
-            line = reader.readLine();
+
+            if (fields.length == 6) {
+                entry.setType(BibtexEntryTypes.BOOK);
+                entry.setField("title", fields[0]);
+                entry.setField("publisher", fields[1]);
+                entry.setField("year", fields[2]);
+                entry.setField("author", fields[3]);
+                entry.setField("editor", fields[4]);
+                entry.setField("bibtexkey", fields[5]);
+
+                items.add(entry);
+
+            }
         }
+        line = reader.readLine();
+            }
         return items;
     }
 

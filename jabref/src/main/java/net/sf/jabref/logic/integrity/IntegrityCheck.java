@@ -258,9 +258,9 @@ public class IntegrityCheck {
 
             boolean hasCapitalLettersThatBibtexWillConvertToSmallerOnes = HAS_CAPITAL_LETTERS.test(valueOnlySpacesWithinCurlyBraces);
 
-            if (hasCapitalLettersThatBibtexWillConvertToSmallerOnes) {
-                return Collections.singletonList(new IntegrityMessage(Localization.lang("large capitals are not masked using curly brackets {}"), entry, "title"));
-            }
+            //            if (hasCapitalLettersThatBibtexWillConvertToSmallerOnes) {
+            //                return Collections.singletonList(new IntegrityMessage(Localization.lang("large capitals are not masked using curly brackets {}"), entry, "title"));
+            //            }
 
             return Collections.emptyList();
         }
